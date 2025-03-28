@@ -1,5 +1,5 @@
 
-class fib_iter():
+class fib_iter:
     def __init__(self, limit):
         self.i_prev = 0
         self.i = 1
@@ -17,9 +17,18 @@ class fib_iter():
             self.count += 1
             return self.current
         raise StopIteration
+    
+    def __repr__(self):
+        return f"fib_iter(limit={self.limit!r})"
+    
+    def __str__(self):
+        return f"Fibonacci numbers iterator with limit: {self.limit}"
 
-
+# print(__name__)     # Имя модуля
+# print(__file__)     # Путь к файлу
+# print(__package__)  # Имя пакета
 if __name__ == "__main__":
     f = fib_iter(100)
     for i in f:
         print(i)
+        
