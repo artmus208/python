@@ -1,4 +1,5 @@
 import inspect
+import platform
 
 def my_help(obj: object):
     print(f"Кастомный help по объекту '{obj}':\n{'-'*40}")
@@ -14,8 +15,10 @@ def my_help(obj: object):
         
     print("Тип объекта:", type(obj))
     print("Достпупные атрибуты и методы:", ", ".join(dir(obj)))
+    print(f"Используемая платформа: {platform.python_implementation()}")
     print("\n\n\n")
     
     
 my_help(object)
 my_help(eval)
+
